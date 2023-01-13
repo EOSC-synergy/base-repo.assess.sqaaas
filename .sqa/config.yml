@@ -1,0 +1,63 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.7
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/kit-data-manager/base-repo:
+      branch: main
+      repo: https://github.com/kit-data-manager/base-repo
+    github.com/kit-data-manager/webpage:
+      branch: gh-pages
+      repo: https://github.com/kit-data-manager/webpage
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/kit-data-manager/base-repo git:
+        commands:
+        - /usr/bin/env sh .sqa/script.randy-fuchsia-gecko.sh
+        container: qc.acc_pretty-grey-skunk
+  QC.Doc:
+    repos:
+      github.com/kit-data-manager/webpage find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.skinny-chartreuse-capuchin.sh
+        container: qc.doc_crappy-corn-chameleon
+      github.com/kit-data-manager/webpage git:
+        commands:
+        - /usr/bin/env sh .sqa/script.skimpy-purple-wombat.sh
+        container: qc.doc_baggy-auburn-walrus
+      github.com/kit-data-manager/webpage markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.gamy-auburn-foxhound.sh
+        container: qc.doc_randy-dandelion-oyster
+  QC.Lic:
+    repos:
+      github.com/kit-data-manager/base-repo licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.dorky-linen-capybara.sh
+        container: qc.lic_chewy-platinum-frog
+  QC.Sty:
+    repos:
+      github.com/kit-data-manager/base-repo checkstyle:
+        commands:
+        - /usr/bin/env sh .sqa/script.scaly-flax-coyote.sh
+        container: qc.sty_sleazy-salmon-owl
+      github.com/kit-data-manager/base-repo hadolint:
+        commands:
+        - /usr/bin/env sh .sqa/script.gloppy-denim-mandrill.sh
+        container: qc.sty_stuffy-blue-fossa
+      github.com/kit-data-manager/base-repo jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.snazzy-xanthic-vulture.sh
+        container: qc.sty_crappy-bistre-deer
+  QC.Ver:
+    repos:
+      github.com/kit-data-manager/base-repo get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.randy-aquamarine-baboon.sh
+        container: qc.ver_woozy-vermilion-tortoise
+timeout: 5400
