@@ -7,9 +7,6 @@ config:
     github.com/kit-data-manager/base-repo:
       branch: main
       repo: https://github.com/kit-data-manager/base-repo
-    github.com/kit-data-manager/webpage:
-      branch: gh-pages
-      repo: https://github.com/kit-data-manager/webpage
 environment:
   JPL_DOCKERFORCEBUILD: enabled
   JPL_KEEPGOING: enabled
@@ -18,46 +15,46 @@ sqa_criteria:
     repos:
       github.com/kit-data-manager/base-repo git:
         commands:
-        - /usr/bin/env sh .sqa/script.randy-fuchsia-gecko.sh
-        container: qc.acc_pretty-grey-skunk
+        - /usr/bin/env sh .sqa/script.crappy-amber-snail.sh
+        container: qc.acc_snazzy-puce-meerkat
   QC.Doc:
     repos:
-      github.com/kit-data-manager/webpage find_doc_files.py:
+      github.com/kit-data-manager/base-repo find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.skinny-chartreuse-capuchin.sh
-        container: qc.doc_crappy-corn-chameleon
-      github.com/kit-data-manager/webpage git:
+        - /usr/bin/env sh .sqa/script.blurry-ruby-chipmunk.sh
+        container: qc.doc_grumpy-harlequin-cichlid
+      github.com/kit-data-manager/base-repo git:
         commands:
-        - /usr/bin/env sh .sqa/script.skimpy-purple-wombat.sh
-        container: qc.doc_baggy-auburn-walrus
-      github.com/kit-data-manager/webpage markdownlint:
+        - /usr/bin/env sh .sqa/script.chewy-pink-cattle.sh
+        container: qc.doc_nippy-chartreuse-chinchilla
+      github.com/kit-data-manager/base-repo markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.gamy-auburn-foxhound.sh
-        container: qc.doc_randy-dandelion-oyster
+        - /usr/bin/env sh .sqa/script.ugly-salmon-woodpecker.sh
+        container: qc.doc_cloudy-asparagus-dodo
   QC.Lic:
     repos:
       github.com/kit-data-manager/base-repo licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.dorky-linen-capybara.sh
-        container: qc.lic_chewy-platinum-frog
+        - /usr/bin/env sh .sqa/script.smelly-gold-tarantula.sh
+        container: qc.lic_wheezy-white-ray
   QC.Sty:
     repos:
       github.com/kit-data-manager/base-repo checkstyle:
         commands:
-        - /usr/bin/env sh .sqa/script.scaly-flax-coyote.sh
-        container: qc.sty_sleazy-salmon-owl
+        - /usr/bin/env sh .sqa/script.smelly-cornflower-chihuahua.sh
+        container: qc.sty_nerdy-burgundy-insect
       github.com/kit-data-manager/base-repo hadolint:
         commands:
-        - /usr/bin/env sh .sqa/script.gloppy-denim-mandrill.sh
-        container: qc.sty_stuffy-blue-fossa
+        - /usr/bin/env sh .sqa/script.whiny-violet-bison.sh
+        container: qc.sty_boozy-mustard-schnauzer
       github.com/kit-data-manager/base-repo jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.snazzy-xanthic-vulture.sh
-        container: qc.sty_crappy-bistre-deer
+        - /usr/bin/env sh .sqa/script.skanky-chartreuse-fousek.sh
+        container: qc.sty_geeky-dandelion-oyster
   QC.Ver:
     repos:
       github.com/kit-data-manager/base-repo get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.randy-aquamarine-baboon.sh
-        container: qc.ver_woozy-vermilion-tortoise
+        - /usr/bin/env sh .sqa/script.gamy-flax-hare.sh
+        container: qc.ver_gloppy-puce-giraffe
 timeout: 5400
