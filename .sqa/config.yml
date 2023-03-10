@@ -2,10 +2,10 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/1.7.7
+      branch: release/1.7.8
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/kit-data-manager/base-repo:
-      branch: dev
+      branch: main
       repo: https://github.com/kit-data-manager/base-repo
 environment:
   JPL_DOCKERFORCEBUILD: enabled
@@ -15,52 +15,52 @@ sqa_criteria:
     repos:
       github.com/kit-data-manager/base-repo git:
         commands:
-        - /usr/bin/env sh .sqa/script.whiny-brass-stingray.sh
-        container: qc.acc_chewy-aquamarine-loon
+        - /usr/bin/env sh .sqa/script.snippy-dandelion-wallaby.sh
+        container: qc.acc_sickly-tangerine-mayfly
   QC.Doc:
     repos:
       github.com/kit-data-manager/base-repo find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.homey-alizarin-yak.sh
-        container: qc.doc_nerdy-ruby-ragdoll
+        - /usr/bin/env sh .sqa/script.skinny-goldenrod-zebra.sh
+        container: qc.doc_baggy-linen-cuttlefish
       github.com/kit-data-manager/base-repo git:
         commands:
-        - /usr/bin/env sh .sqa/script.ugly-platinum-oriole.sh
-        container: qc.doc_crappy-silver-crane
+        - /usr/bin/env sh .sqa/script.lousy-eggplant-maltese.sh
+        container: qc.doc_pasty-bronze-sparrow
       github.com/kit-data-manager/base-repo markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.nippy-purple-cuttlefish.sh
-        container: qc.doc_foggy-coral-bombay
+        - /usr/bin/env sh .sqa/script.muzzy-cobalt-mongoose.sh
+        container: qc.doc_chewy-saffron-quetzal
   QC.Lic:
     repos:
       github.com/kit-data-manager/base-repo licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.greasy-cardinal-jackal.sh
-        container: qc.lic_gummy-razzmatazz-woodlouse
+        - /usr/bin/env sh .sqa/script.snippy-firebrick-capuchin.sh
+        container: qc.lic_wimpy-chestnut-flamingo
   QC.Met:
     repos:
       github.com/kit-data-manager/base-repo cff-converter-python:
         commands:
-        - /usr/bin/env sh .sqa/script.sickly-tomato-gibbon.sh
-        container: qc.met_thirsty-cinnamon-bobcat
+        - /usr/bin/env sh .sqa/script.snippy-peach-labradoodle.sh
+        container: qc.met_stinky-russet-dormouse
   QC.Sty:
     repos:
       github.com/kit-data-manager/base-repo checkstyle:
         commands:
-        - /usr/bin/env sh .sqa/script.breezy-lime-shrew.sh
-        container: qc.sty_wimpy-cardinal-termite
+        - /usr/bin/env sh .sqa/script.flabby-chartreuse-cow.sh
+        container: qc.sty_foggy-ruby-tang
       github.com/kit-data-manager/base-repo hadolint:
         commands:
-        - /usr/bin/env sh .sqa/script.lousy-mustard-wombat.sh
-        container: qc.sty_geeky-apricot-bobcat
+        - /usr/bin/env sh .sqa/script.silly-magnolia-lion.sh
+        container: qc.sty_sloppy-cerise-jaguar
       github.com/kit-data-manager/base-repo jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.ugly-silver-toucan.sh
-        container: qc.sty_sunny-lilac-moth
+        - /usr/bin/env sh .sqa/script.wiggy-linen-pig.sh
+        container: qc.sty_gimpy-cinnamon-wildebeest
   QC.Ver:
     repos:
       github.com/kit-data-manager/base-repo get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.sunny-orchid-ibis.sh
-        container: qc.ver_cozy-seashell-turtle
+        - /usr/bin/env sh .sqa/script.beady-indigo-tiger.sh
+        container: qc.ver_droopy-wisteria-goose
 timeout: 5400
